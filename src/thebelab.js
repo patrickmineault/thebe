@@ -4,6 +4,7 @@ import "codemirror/lib/codemirror.css";
 
 import { ThebeManager } from "./manager";
 import { hookupKernel, requestKernel, requestBinderKernel } from "./kernels";
+import { requestPyodideKernel } from './pyodide';
 import { mergeOptions } from "./options";
 import { renderAllCells } from "./render";
 import * as events from "./events";
@@ -71,6 +72,10 @@ export function bootstrap(options) {
       return requestBinderKernel({
         binderOptions: options.binderOptions,
         kernelOptions: options.kernelOptions,
+      });
+    } else if(options.pyodideOptions) {
+      return requestPyodideKernel({
+        pyodideOptions: options.pyodideOptions
       });
     } else {
       return requestKernel(options.kernelOptions);

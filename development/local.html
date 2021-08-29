@@ -20,6 +20,10 @@
             "token": "thebe-test-secret",
           },
         },
+        pyodideOptions: {
+          baseUrl: "https://cdn.jsdelivr.net/pyodide/v0.18.0/full/",
+          extraPackages: [],
+        },
         codeMirrorConfig: {
           "theme": "abcdef"
         },
@@ -51,20 +55,23 @@
           .querySelector("#activateButton")
           .addEventListener("click", bootstrapThebe);
       </script>
-      <pre data-executable="true" data-language="python" class="pre-element">
-print("Hello!")</pre
-      >
-      <pre data-executable="true" data-language="python" class="pre-element">
-from IPython.display import Math
-Math("$x = 5$")
-            </pre
-      >
-      <pre data-executable="true" data-language="python" class="pre-element">
-from ipywidgets import IntSlider
-w = IntSlider(0, 10)
-w
-            </pre
-      >
+<pre data-executable="true" data-language="python" class="pre-element">
+1+2
+</pre>
+<pre data-executable="true" data-language="python" class="pre-element">
+import this
+</pre>
+<pre data-executable="true" data-language="python" class="pre-element">
+a = 1
+a
+</pre>
+<pre data-executable="true" data-language="python" class="pre-element">
+a += 1
+a
+</pre>
+<pre data-executable="true" data-language="python" class="pre-element">
+1/0
+</pre>
     </div>
   </body>
 </html>
